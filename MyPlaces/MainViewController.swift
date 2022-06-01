@@ -14,7 +14,6 @@ class MainViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = 60
 
     }
 
@@ -33,11 +32,18 @@ class MainViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         content.text = placeName[indexPath.row]
         content.image = UIImage(named: placeName[indexPath.row])
+        content.imageProperties.cornerRadius = cell.frame.size.height / 2
         cell.contentConfiguration = content
 
         return cell
     }
 
+    // MARK: - TableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 85
+    }
     
     // MARK: - Navigation
 
