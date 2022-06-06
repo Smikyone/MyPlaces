@@ -24,16 +24,21 @@ class MainViewController: UITableViewController {
         
         return placeName.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        var content = cell.defaultContentConfiguration()
-        content.text = placeName[indexPath.row]
-        content.image = UIImage(named: placeName[indexPath.row])
-        content.imageProperties.cornerRadius = cell.frame.size.height / 2
-        cell.contentConfiguration = content
+        cell.placeName.text = placeName[indexPath.row]
+        cell.imageOfPlace.image = UIImage(named: placeName[indexPath.row])
+        cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
+        cell.imageOfPlace.clipsToBounds = true
+        
+//        var content = cell.defaultContentConfiguration()
+//        content.text = placeName[indexPath.row]
+//        content.image = UIImage(named: placeName[indexPath.row])
+//        content.imageProperties.cornerRadius = cell.frame.size.height / 2
+//        cell.contentConfiguration = content
 
         return cell
     }
