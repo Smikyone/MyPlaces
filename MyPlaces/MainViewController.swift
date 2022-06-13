@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
     
-    let placeName = ["Fарш","Gagawa","McDonald's"]
+    var places = Place.getPlaces()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,23 +22,27 @@ class MainViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return placeName.count
+        return places.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        
+        let place = places[indexPath.row]
 
-        cell.placeName.text = placeName[indexPath.row]
-        cell.imageOfPlace.image = UIImage(named: placeName[indexPath.row])
+        cell.placeName.text = place.name
+        cell.placeLocation.text = place.location
+        cell.placeType.text = place.type
+        
+        if place.image == nil {
+            cell.imageOfPlace.image = UIImage(named: place.restourantImage!)
+        } else {
+            cell.imageOfPlace.image = place.image
+        }
+        
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace.clipsToBounds = true
-        
-//        var content = cell.defaultContentConfiguration()
-//        content.text = placeName[indexPath.row]
-//        content.image = UIImage(named: placeName[indexPath.row])
-//        content.imageProperties.cornerRadius = cell.frame.size.height / 2
-//        cell.contentConfiguration = content
 
         return cell
     }
@@ -58,4 +62,15 @@ class MainViewController: UITableViewController {
         // Pass the selected object to the new view controller.
 //    }
 
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        
+        guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
+        
+        newPlaceVC.saveNewPlace()
+        places.append(newPlaceVC.newPlace!)
+        tableView.reloadData()
+        
+        
+    }
+    
 }
