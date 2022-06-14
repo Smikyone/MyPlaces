@@ -4,16 +4,17 @@
 //
 //  Created by Жоооопаааа on 29.05.2022.
 //
-
 import UIKit
+import RealmSwift
 
 class MainViewController: UITableViewController {
     
-    var places = Place.getPlaces()
+    var places: Results<Place>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        places = realm.objects(Place.self)
 
     }
 
@@ -21,26 +22,21 @@ class MainViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return places.count
+
+        return places.isEmpty ? 0 : places.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-        
+
         let place = places[indexPath.row]
 
         cell.placeName.text = place.name
         cell.placeLocation.text = place.location
         cell.placeType.text = place.type
-        
-        if place.image == nil {
-            cell.imageOfPlace.image = UIImage(named: place.restourantImage!)
-        } else {
-            cell.imageOfPlace.image = place.image
-        }
-        
+        cell.imageOfPlace.image = UIImage(data: place.imageData!)
+
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace.clipsToBounds = true
 
@@ -49,10 +45,19 @@ class MainViewController: UITableViewController {
 
     // MARK: - TableViewDelegate
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let place = places[indexPath.row]
+        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { (_, _, _) in
+            StorageManager.deleteObject(place)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
         
-        return 85
+        let action = UISwipeActionsConfiguration(actions: [deleteAction])
+        return action
+        
+        
     }
+    
     
     // MARK: - Navigation
 
@@ -67,7 +72,6 @@ class MainViewController: UITableViewController {
         guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
         
         newPlaceVC.saveNewPlace()
-        places.append(newPlaceVC.newPlace!)
         tableView.reloadData()
         
         
