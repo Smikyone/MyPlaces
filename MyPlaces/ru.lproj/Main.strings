@@ -1,0 +1,42 @@
+
+/* Class = "UINavigationItem"; title = "New place"; ObjectID = "2s5-m7-cnt"; */
+"2s5-m7-cnt.title" = "New place";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "F3N-As-UIV"; */
+"F3N-As-UIV.text" = "Type";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "Lkd-Cq-f0p"; */
+"Lkd-Cq-f0p.text" = "Location";
+
+/* Class = "UITextField"; placeholder = "Place location"; ObjectID = "RdK-I1-gDM"; */
+"RdK-I1-gDM.placeholder" = "Place location";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "TT8-R9-A2v"; */
+"TT8-R9-A2v.text" = "Type";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "UM2-tA-jmi"; */
+"UM2-tA-jmi.title" = "Item";
+
+/* Class = "UISegmentedControl"; Vny-uS-akR.segmentTitles[0] = "По дате"; ObjectID = "Vny-uS-akR"; */
+"Vny-uS-akR.segmentTitles[0]" = "По дате";
+
+/* Class = "UISegmentedControl"; Vny-uS-akR.segmentTitles[1] = "По имени"; ObjectID = "Vny-uS-akR"; */
+"Vny-uS-akR.segmentTitles[1]" = "По имени";
+
+/* Class = "UITextField"; placeholder = "Place name"; ObjectID = "Wyu-Og-czI"; */
+"Wyu-Og-czI.placeholder" = "Place name";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "edS-OV-Hri"; */
+"edS-OV-Hri.text" = "Name";
+
+/* Class = "UINavigationItem"; title = "My places"; ObjectID = "jB1-Bk-Dze"; */
+"jB1-Bk-Dze.title" = "My places";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "llO-aW-hOm"; */
+"llO-aW-hOm.text" = "Location";
+
+/* Class = "UITextField"; placeholder = "Place type"; ObjectID = "rtD-nj-McE"; */
+"rtD-nj-McE.placeholder" = "Place type";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "vr2-yg-yGA"; */
+"vr2-yg-yGA.text" = "Name";
