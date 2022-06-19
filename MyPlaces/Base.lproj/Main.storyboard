@@ -144,6 +144,23 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="tQw-IK-zyN">
+                                        <rect key="frame" x="0.0" y="519.5" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tQw-IK-zyN" id="iPP-ta-sTb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MUG-iR-ZBJ" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                    <rect key="frame" x="81" y="48" width="252" height="44"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MUG-iR-ZBJ" firstAttribute="centerY" secondItem="iPP-ta-sTb" secondAttribute="centerY" id="9e5-af-kdq"/>
+                                                <constraint firstItem="MUG-iR-ZBJ" firstAttribute="centerX" secondItem="iPP-ta-sTb" secondAttribute="centerX" id="HlG-Jw-g2p"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -169,6 +186,7 @@
                         <outlet property="placeLocation" destination="RdK-I1-gDM" id="350-3T-7ER"/>
                         <outlet property="placeName" destination="Wyu-Og-czI" id="nY6-Q6-crN"/>
                         <outlet property="placeType" destination="rtD-nj-McE" id="2Fo-SQ-1ol"/>
+                        <outlet property="ratingControl" destination="MUG-iR-ZBJ" id="EPb-Su-gA5"/>
                         <outlet property="saveButton" destination="XTI-g9-Jtl" id="oFo-o1-YQ3"/>
                     </connections>
                 </tableViewController>
@@ -334,6 +352,11 @@
             <point key="canvasLocation" x="1096" y="-631"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="MUG-iR-ZBJ">
+            <size key="intrinsicContentSize" width="252" height="44"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="VPE-xO-kbW"/>
     </inferredMetricsTieBreakers>

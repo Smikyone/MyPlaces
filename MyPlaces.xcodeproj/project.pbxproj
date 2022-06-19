@@ -16,6 +16,7 @@
 		2D12D936284E658C00C84217 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12D935284E658C00C84217 /* CustomTableViewCell.swift */; };
 		2D12D93A284E79D000C84217 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12D939284E79D000C84217 /* PlaceModel.swift */; };
 		2D12D93C285783AC00C84217 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12D93B285783AC00C84217 /* NewPlaceViewController.swift */; };
+		2D275B64285F32E90088DCEA /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D275B63285F32E90088DCEA /* RatingControl.swift */; };
 		2DC66D2D2858DF2D00905A8C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2DC66D2C2858DF2D00905A8C /* Realm */; };
 		2DC66D2F2858DF2D00905A8C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2DC66D2E2858DF2D00905A8C /* RealmSwift */; };
 		2DC66D312858E72C00905A8C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC66D302858E72C00905A8C /* StorageManager.swift */; };
@@ -35,6 +36,7 @@
 		2D275B60285CAB9D0088DCEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D275B61285CABD90088DCEA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2D275B62285CABDE0088DCEA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		2D275B63285F32E90088DCEA /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		2DC66D302858E72C00905A8C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 				2D12D9332843B3A700C84217 /* MainViewController.swift */,
 				2D12D93B285783AC00C84217 /* NewPlaceViewController.swift */,
 				2D12D935284E658C00C84217 /* CustomTableViewCell.swift */,
+				2D275B63285F32E90088DCEA /* RatingControl.swift */,
 				2D12D939284E79D000C84217 /* PlaceModel.swift */,
 				2DC66D302858E72C00905A8C /* StorageManager.swift */,
 				2D12D9252843AFB000C84217 /* Main.storyboard */,
@@ -168,6 +171,7 @@
 				2D12D93C285783AC00C84217 /* NewPlaceViewController.swift in Sources */,
 				2D12D9202843AFB000C84217 /* AppDelegate.swift in Sources */,
 				2DC66D312858E72C00905A8C /* StorageManager.swift in Sources */,
+				2D275B64285F32E90088DCEA /* RatingControl.swift in Sources */,
 				2D12D93A284E79D000C84217 /* PlaceModel.swift in Sources */,
 				2D12D936284E658C00C84217 /* CustomTableViewCell.swift in Sources */,
 				2D12D9222843AFB000C84217 /* SceneDelegate.swift in Sources */,
